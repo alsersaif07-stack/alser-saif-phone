@@ -1,0 +1,218 @@
+/* ===== إعدادات عامة ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 15px;
+    color: #333;
+}
+
+.container {
+    background: #fff;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== الهيدر ===== */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #4a3f8f;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* ===== صندوق البحث ===== */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#phoneInput {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+#phoneInput:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+#searchBtn {
+    padding: 14px 24px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+#searchBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+#searchBtn:active {
+    transform: translateY(0);
+}
+
+#searchBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== مؤشر التحميل ===== */
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #eee;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #777;
+}
+
+/* ===== رسالة الخطأ ===== */
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 15px;
+    border-radius: 12px;
+    border-right: 4px solid #c33;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ===== النتائج ===== */
+.results {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.phone-name {
+    font-size: 1.5rem;
+    color: #4a3f8f;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 16px;
+    background: #f8f9ff;
+    border-radius: 10px;
+    border-right: 3px solid #667eea;
+    gap: 15px;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #4a3f8f;
+    min-width: 130px;
+    flex-shrink: 0;
+}
+
+.spec-value {
+    color: #444;
+    text-align: left;
+    flex: 1;
+    word-break: break-word;
+}
+
+/* ===== الفوتر ===== */
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* ===== أدوات مساعدة ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== استجابة للجوال ===== */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .spec-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .spec-label {
+        min-width: auto;
+    }
+}

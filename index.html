@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Specs - مواصفات الهواتف</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📱 Phone Specs</h1>
+            <p class="subtitle">ابحث عن مواصفات أي هاتف</p>
+        </header>
+
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="phoneInput" 
+                placeholder="اكتب اسم الهاتف... مثال: iPhone 14"
+                autocomplete="off"
+            >
+            <button id="searchBtn">🔍 ابحث</button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>جاري البحث...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="results" class="results hidden"></div>
+
+        <footer>
+            <p>Built with ❤️ using API Ninjas</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
